@@ -9,7 +9,7 @@ export default () => html`
 
     <!-- THIS PROBABLY WONT WORK, FIX IT. -->
     <div class="centerContainer">
-      ${views}
+      ${views.Home()}
     </div>
 
     <div class="events">
