@@ -369,8 +369,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"", "\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n            Soildarity\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), _soildarityLogo.default, _spade.default, _hoe.default, (0, _Nav.default)());
+var _default = function _default(st) {
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"", "\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n            Soildarity", "\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), _soildarityLogo.default, _spade.default, st.header, _hoe.default, (0, _Nav.default)());
 };
 
 exports.default = _default;
@@ -590,12 +590,121 @@ var _Footer = _interopRequireDefault(require("./Footer"));
 var _Nav = _interopRequireDefault(require("./Nav"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Header":"components/Header.js","./Main":"components/Main.js","./Footer":"components/Footer.js","./Nav":"components/Nav.js"}],"index.js":[function(require,module,exports) {
+},{"./Header":"components/Header.js","./Main":"components/Main.js","./Footer":"components/Footer.js","./Nav":"components/Nav.js"}],"store/Home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: "",
+  view: "Home"
+};
+exports.default = _default;
+},{}],"store/Events.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: " -  Upcoming Events",
+  view: "Events"
+};
+exports.default = _default;
+},{}],"store/Contact.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: " - Contact Us",
+  view: "Contact"
+};
+exports.default = _default;
+},{}],"store/About.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  header: " - About Us",
+  view: "About"
+};
+exports.default = _default;
+},{}],"store/Links.js":[function(require,module,exports) {
+
+},{}],"store/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "About", {
+  enumerable: true,
+  get: function () {
+    return _About.default;
+  }
+});
+Object.defineProperty(exports, "Contact", {
+  enumerable: true,
+  get: function () {
+    return _Contact.default;
+  }
+});
+Object.defineProperty(exports, "Events", {
+  enumerable: true,
+  get: function () {
+    return _Events.default;
+  }
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _Home.default;
+  }
+});
+Object.defineProperty(exports, "Links", {
+  enumerable: true,
+  get: function () {
+    return _Links.default;
+  }
+});
+
+var state = _interopRequireWildcard(require("/store"));
+
+var _Home = _interopRequireDefault(require("./Home"));
+
+var _Events = _interopRequireDefault(require("./Events"));
+
+var _Contact = _interopRequireDefault(require("./Contact"));
+
+var _About = _interopRequireDefault(require("./About"));
+
+var _Links = _interopRequireDefault(require("./Links"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+},{"/store":"store/index.js","./Home":"store/Home.js","./Events":"store/Events.js","./Contact":"store/Contact.js","./About":"store/About.js","./Links":"store/Links.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _components = require("./components");
 
-// import * as state from "./store";
+var state = _interopRequireWildcard(require("./store"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 // import Navigo from "navigo";
 // import { capitalize } from "lodash";
 // const router = new Navigo(window.location.origin);
@@ -608,11 +717,11 @@ var _components = require("./components");
 //     }
 //   })
 //   .resolve();
-function render() {
-  document.querySelector("#root").innerHTML = "\n    ".concat((0, _components.Header)(), "\n    ").concat((0, _components.Main)(), "\n    ").concat((0, _components.Footer)(), "\n  ");
+function render(st) {
+  document.querySelector("#root").innerHTML = "\n    ".concat((0, _components.Header)(st), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n  ");
 }
 
-render(); // function render(st) {
+render(state.Home); // function render(st) {
 //   document.querySelector("#root").innerHTML = `
 //     ${Header(st)}
 //     ${Nav(state.Links)}
@@ -653,7 +762,7 @@ render(); // function render(st) {
 //       render(state.Gallery);
 //     });
 //   }
-},{"./components":"components/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./components":"components/index.js","./store":"store/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

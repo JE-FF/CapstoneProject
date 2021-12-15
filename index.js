@@ -1,5 +1,5 @@
 import { Header, Nav, Main, Footer } from "./components";
-// import * as state from "./store";
+import * as state from "./store";
 // import Navigo from "navigo";
 // import { capitalize } from "lodash";
 
@@ -15,15 +15,15 @@ import { Header, Nav, Main, Footer } from "./components";
 //   })
 //   .resolve();
 
-function render() {
+function render(st) {
     document.querySelector("#root").innerHTML = `
-    ${Header()}
-    ${Main()}
+    ${Header(st)}
+    ${Main(st)}
     ${Footer()}
   `;
 }
 
-render();
+render(state.Home);
 // function render(st) {
 //   document.querySelector("#root").innerHTML = `
 //     ${Header(st)}
