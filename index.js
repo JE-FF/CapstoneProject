@@ -1,4 +1,4 @@
-import { Header, Main, Footer } from "./components";
+import { Header, Nav, Main, Footer } from "./components";
 // import * as state from "./store";
 // import Navigo from "navigo";
 // import { capitalize } from "lodash";
@@ -17,10 +17,10 @@ import { Header, Main, Footer } from "./components";
 
 function render() {
     document.querySelector("#root").innerHTML = `
-    ${Header}
-    ${Nav}
-    ${Main}
-    ${Footer}
+    ${Header()}
+    ${Nav()}
+    ${Main()}
+    ${Footer()}
   `;
 }
 

@@ -334,8 +334,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var _default = function _default(st) {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"/assets/img/soildarityLogo.png\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"assets/img/spade.svg\"/>\n            Soildarity\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"assets/img/hoe.svg\"/>\n        </h1>\n\n        <nav>\n            <a href=\"./index.html\">Home</a>\n            <a href=\"./about.html\">About</a>\n            <a href=\"./contact.html\">Contact</a>\n            <a href=\"./events.html\">Events</a>\n        </nav>\n    </header>\n"])));
+var _default = function _default() {
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"/assets/img/soildarityLogo.png\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"assets/img/spade.svg\"/>\n            Soildarity\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"assets/img/hoe.svg\"/>\n        </h1>\n    </header>\n"])));
 };
 
 exports.default = _default;
@@ -566,7 +566,7 @@ var _components = require("./components");
 //   })
 //   .resolve();
 function render() {
-  document.querySelector("#root").innerHTML = "\n    ".concat(_components.Header, "\n    ").concat(Nav, "\n    ").concat(_components.Main, "\n    ").concat(_components.Footer, "\n  ");
+  document.querySelector("#root").innerHTML = "\n    ".concat((0, _components.Header)(), "\n    ").concat((0, _components.Nav)(), "\n    ").concat((0, _components.Main)(), "\n    ").concat((0, _components.Footer)(), "\n  ");
 }
 
 render(); // function render(st) {
@@ -638,7 +638,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57287" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49642" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
