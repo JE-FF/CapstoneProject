@@ -45,7 +45,6 @@ main {
     border-width: 1px;
     border-style: solid;
     flex-basis: 25%;
-    height: 80vh;
     text-align: center;
 }
 

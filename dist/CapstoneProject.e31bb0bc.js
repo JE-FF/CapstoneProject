@@ -339,7 +339,13 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js"}],"components/Header.js":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js"}],"assets/img/soildarityLogo.png":[function(require,module,exports) {
+module.exports = "/soildarityLogo.cc00e296.png";
+},{}],"assets/img/spade.svg":[function(require,module,exports) {
+module.exports = "/spade.624e54e4.svg";
+},{}],"assets/img/hoe.svg":[function(require,module,exports) {
+module.exports = "/hoe.76dead83.svg";
+},{}],"components/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -351,6 +357,12 @@ var _htmlLiteral = _interopRequireDefault(require("html-literal"));
 
 var _Nav = _interopRequireDefault(require("./Nav"));
 
+var _soildarityLogo = _interopRequireDefault(require("/assets/img/soildarityLogo.png"));
+
+var _spade = _interopRequireDefault(require("/assets/img/spade.svg"));
+
+var _hoe = _interopRequireDefault(require("/assets/img/hoe.svg"));
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -358,11 +370,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"assets/img/soildarityLogo.png\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"/assets/img/spade.svg\"/>\n            Soildarity\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"/assets/img/hoe.svg\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), (0, _Nav.default)());
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"", "\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n            Soildarity\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), _soildarityLogo.default, _spade.default, _hoe.default, (0, _Nav.default)());
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js","./Nav":"components/Nav.js"}],"assets/img/wsnaccad-Shark.svg":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js","./Nav":"components/Nav.js","/assets/img/soildarityLogo.png":"assets/img/soildarityLogo.png","/assets/img/spade.svg":"assets/img/spade.svg","/assets/img/hoe.svg":"assets/img/hoe.svg"}],"assets/img/wsnaccad-Shark.svg":[function(require,module,exports) {
 module.exports = "/wsnaccad-Shark.6df34d23.svg";
 },{}],"components/views/Home.js":[function(require,module,exports) {
 "use strict";
@@ -669,7 +681,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49721" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50013" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
