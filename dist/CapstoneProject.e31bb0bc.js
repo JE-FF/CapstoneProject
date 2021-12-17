@@ -318,7 +318,28 @@ function resolveExpression(expression) {
     return flatted_1.stringify(expression, undefined, 2);
 }
 
-},{"flatted":"node_modules/flatted/esm/index.js","strip-indent":"node_modules/strip-indent/index.js"}],"components/Nav.js":[function(require,module,exports) {
+},{"flatted":"node_modules/flatted/esm/index.js","strip-indent":"node_modules/strip-indent/index.js"}],"store/Links.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = [{
+  title: "Home",
+  text: "Home"
+}, {
+  title: "About",
+  text: "About"
+}, {
+  title: "Contacts",
+  text: "Contacts"
+}, {
+  title: "Events",
+  text: "Events"
+}];
+exports.default = _default;
+},{}],"components/Nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -328,6 +349,8 @@ exports.default = void 0;
 
 var _htmlLiteral = _interopRequireDefault(require("html-literal"));
 
+var _Links = _interopRequireDefault(require("/store/Links"));
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -335,11 +358,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    <nav>\n        <a href=\"./index.html\">Home</a>\n        <a href=\"./about.html\">About</a>\n        <a href=\"./contact.html\">Contact</a>\n        <a href=\"./events.html\">Events</a>\n    </nav>\n"])));
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    <nav>\n        <!-- <a href=\"./index.html\">Home</a>\n        <a href=\"./about.html\">About</a>\n        <a href=\"./contact.html\">Contact</a>\n        <a href=\"./events.html\">Events</a> -->\n        ", "\n    </nav>\n"])), _Links.default.map(function (i) {
+    return "<a href=\"/".concat(i.title, "\"><li>").concat(i.text, "</li></a>");
+  }));
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js"}],"assets/img/soildarityLogo.png":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js","/store/Links":"store/Links.js"}],"assets/img/soildarityLogo.png":[function(require,module,exports) {
 module.exports = "/soildarityLogo.cc00e296.png";
 },{}],"assets/img/spade.svg":[function(require,module,exports) {
 module.exports = "/spade.624e54e4.svg";
@@ -638,8 +663,6 @@ var _default = {
   view: "About"
 };
 exports.default = _default;
-},{}],"store/Links.js":[function(require,module,exports) {
-
 },{}],"store/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -790,7 +813,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50013" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54960" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
