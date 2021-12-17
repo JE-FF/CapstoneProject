@@ -1,7 +1,7 @@
 import html from "html-literal";
 import * as views from "./views";
 
-export default () => html`
+export default (st) => html`
   <main>
     <div class="gardenList">
       <p>LIST OF GARDENS GOES HERE.</p>
@@ -9,7 +9,7 @@ export default () => html`
 
     <!-- THIS PROBABLY WONT WORK, FIX IT. -->
     <div class="centerContainer">
-      ${views.Home()}
+      ${views[st.view](st)}
     </div>
 
     <div class="events">
