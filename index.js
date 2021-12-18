@@ -1,4 +1,4 @@
-import { Header, Main, Footer } from "./components";
+import { Header, Nav, Main, Footer } from "./components";
 import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
@@ -10,15 +10,6 @@ router.on({
     ":page": params => render(state[capitalize(params.page)]),
     }).resolve();
 
-// function render(st) {
-//     document.querySelector("#root").innerHTML = `
-//     ${Header(st)}
-//     ${Main(st)}
-//     ${Footer()}
-//   `;
-// }
-// render(state.Home);
-
 function render(st) {
   document.querySelector("#root").innerHTML = `
     ${Header(st)}
@@ -26,7 +17,6 @@ function render(st) {
     ${Footer()}
   `;
   router.updatePageLinks();
-  addEventListeners(st);
 }
 
 function addEventListeners(st) {

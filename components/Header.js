@@ -15,7 +15,7 @@ export default (st) => html`
             <img style="transform: rotate(-45deg);" width="auto" height="50px" src="${hoe}"/>
         </h1>
 
-        ${Nav()}
+        ${Nav(st)}
 
     </header>
 `;
