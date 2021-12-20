@@ -1,4 +1,7 @@
 REFERENCE DOCS
-.cache/
 dist/
 node_modules/
+.DS_Store
+.cache
+*.sw*
+.env
