@@ -11,11 +11,12 @@ const router = new Navigo(window.location.origin);
 
 function render(st) {
   document.querySelector("#root").innerHTML = `
-    ${Header(st)}
+    ${Header(st, state.Links)}
     ${Main(st)}
     ${Footer()}
   `;
   router.updatePageLinks();
+  addEventListeners(st);
 }
 
 function addEventListeners(st) {
@@ -26,6 +27,14 @@ function addEventListeners(st) {
     })
   );
 }
+
+// Add menu toggle to bars icon in nav bar
+
+// document
+// .querySelector(".fa-bars")
+// .addEventListener("click", () =>
+//   document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+// );
 
 router.hooks({
   before: (done, params) => {
@@ -51,14 +60,11 @@ router.hooks({
   }
 });
 
+
+
+
 router.on({
   "/": () => render(state.Home),
   ":page": params => render(state[capitalize(params.page)]),
   }).resolve();
 
-// add menu toggle to bars icon in nav bar
-  document
-    .querySelector(".fa-bars")
-    .addEventListener("click", () =>
-      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
-    );

@@ -318,28 +318,7 @@ function resolveExpression(expression) {
     return flatted_1.stringify(expression, undefined, 2);
 }
 
-},{"flatted":"node_modules/flatted/esm/index.js","strip-indent":"node_modules/strip-indent/index.js"}],"store/Links.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = [{
-  title: "Home",
-  text: "Home"
-}, {
-  title: "About",
-  text: "About"
-}, {
-  title: "Contact",
-  text: "Contact"
-}, {
-  title: "Events",
-  text: "Events"
-}];
-exports.default = _default;
-},{}],"components/Nav.js":[function(require,module,exports) {
+},{"flatted":"node_modules/flatted/esm/index.js","strip-indent":"node_modules/strip-indent/index.js"}],"components/Nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -349,22 +328,20 @@ exports.default = void 0;
 
 var _htmlLiteral = _interopRequireDefault(require("html-literal"));
 
-var _Links = _interopRequireDefault(require("/store/Links"));
-
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var _default = function _default() {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    <nav>\n        <!-- <a href=\"./index.html\">Home</a>\n        <a href=\"./about.html\">About</a>\n        <a href=\"./contact.html\">Contact</a>\n        <a href=\"./events.html\">Events</a> -->\n        ", "\n    </nav>\n"])), _Links.default.map(function (i) {
-    return "<a href=\"/".concat(i.title, "\"><li>").concat(i.text, "</li></a>");
+var _default = function _default(links) {
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <nav>\n    <i class=\"fas fa-bars\"></i>\n    <ul class=\"hidden--mobile nav-links\">\n      ", "\n    </ul>\n  </nav>\n"])), links.map(function (link) {
+    return "<li><a href=\"/".concat(link.title, "\" title=\"").concat(link.title, "\" data-navigo>").concat(link.text, "</a></li>");
   }));
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js","/store/Links":"store/Links.js"}],"assets/img/soildarityLogo.png":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js"}],"assets/img/soildarityLogo.png":[function(require,module,exports) {
 module.exports = "/soildarityLogo.cc00e296.png";
 },{}],"assets/img/spade.svg":[function(require,module,exports) {
 module.exports = "/spade.624e54e4.svg";
@@ -394,8 +371,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var _default = function _default(st) {
-  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"", "\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n            Grown @ Home", "\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), _soildarityLogo.default, _spade.default, st.header, _hoe.default, (0, _Nav.default)(st));
+var _default = function _default(st, links) {
+  return (0, _htmlLiteral.default)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  <header>\n        <img id=\"logo\" width=\"100px\" height=\"auto\" src=\"", "\" />\n        \n        <!-- header title with inline spade and shovel images -->\n        <h1 class=\"headerTitle\">\n            <img style=\"transform: rotate(45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n            Grown @ Home", "\n            <img style=\"transform: rotate(-45deg);\" width=\"auto\" height=\"50px\" src=\"", "\"/>\n        </h1>\n\n        ", "\n\n    </header>\n"])), _soildarityLogo.default, _spade.default, st.header, _hoe.default, (0, _Nav.default)(links));
 };
 
 exports.default = _default;
@@ -667,6 +644,27 @@ var _default = {
   header: " - About Us",
   view: "About"
 };
+exports.default = _default;
+},{}],"store/Links.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = [{
+  title: "Home",
+  text: "Home"
+}, {
+  title: "About",
+  text: "About"
+}, {
+  title: "Contact",
+  text: "Contact"
+}, {
+  title: "Events",
+  text: "Events"
+}];
 exports.default = _default;
 },{}],"store/index.js":[function(require,module,exports) {
 "use strict";
@@ -22597,8 +22595,9 @@ _dotenv.default.config();
 var router = new _navigo.default(window.location.origin);
 
 function render(st) {
-  document.querySelector("#root").innerHTML = "\n    ".concat((0, _components.Header)(st), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n  ");
+  document.querySelector("#root").innerHTML = "\n    ".concat((0, _components.Header)(st, state.Links), "\n    ").concat((0, _components.Main)(st), "\n    ").concat((0, _components.Footer)(), "\n  ");
   router.updatePageLinks();
+  addEventListeners(st);
 }
 
 function addEventListeners(st) {
@@ -22608,7 +22607,13 @@ function addEventListeners(st) {
       render(state[event.target.title]);
     });
   });
-}
+} // Add menu toggle to bars icon in nav bar
+// document
+// .querySelector(".fa-bars")
+// .addEventListener("click", () =>
+//   document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+// );
+
 
 router.hooks({
   before: function before(done, params) {
@@ -22635,11 +22640,7 @@ router.on({
   ":page": function page(params) {
     return render(state[(0, _lodash.capitalize)(params.page)]);
   }
-}).resolve(); // add menu toggle to bars icon in nav bar
-
-document.querySelector(".fa-bars").addEventListener("click", function () {
-  return document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-});
+}).resolve();
 },{"./components":"components/index.js","./store":"store/index.js","navigo":"node_modules/navigo/lib/navigo.min.js","lodash":"node_modules/lodash/lodash.js","axios":"node_modules/axios/index.js","dotenv":"node_modules/dotenv/lib/main.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -22668,7 +22669,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56445" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57049" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
