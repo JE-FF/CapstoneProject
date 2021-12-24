@@ -376,7 +376,9 @@ var _default = function _default(st, links) {
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js","./Nav":"components/Nav.js","/assets/img/soildarityLogo.png":"assets/img/soildarityLogo.png","/assets/img/spade.svg":"assets/img/spade.svg","/assets/img/hoe.svg":"assets/img/hoe.svg"}],"components/views/Home.js":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js","./Nav":"components/Nav.js","/assets/img/soildarityLogo.png":"assets/img/soildarityLogo.png","/assets/img/spade.svg":"assets/img/spade.svg","/assets/img/hoe.svg":"assets/img/hoe.svg"}],"assets/img/wsnaccad-Shark.svg":[function(require,module,exports) {
+module.exports = "/wsnaccad-Shark.6df34d23.svg";
+},{}],"components/views/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -385,6 +387,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _htmlLiteral = _interopRequireDefault(require("html-literal"));
+
+var _wsnaccadShark = _interopRequireDefault(require("/assets/img/wsnaccad-Shark.svg"));
 
 var _templateObject;
 
@@ -401,7 +405,7 @@ var _default = function _default(st) {
 };
 
 exports.default = _default;
-},{"html-literal":"node_modules/html-literal/build/src/index.js"}],"components/views/Events.js":[function(require,module,exports) {
+},{"html-literal":"node_modules/html-literal/build/src/index.js","/assets/img/wsnaccad-Shark.svg":"assets/img/wsnaccad-Shark.svg"}],"components/views/Events.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22603,10 +22607,12 @@ function addEventListeners(st) {
       render(state[event.target.title]);
     });
   });
-  document.querySelector(".fa-bars").addEventListener("click", function () {
-    return document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-  });
 } // Add menu toggle to bars icon in nav bar
+// document
+// .querySelector(".fa-bars")
+// .addEventListener("click", () =>
+//   document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+// );
 
 
 router.hooks({
@@ -22663,7 +22669,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57774" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57829" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
