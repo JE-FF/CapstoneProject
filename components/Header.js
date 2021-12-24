@@ -4,7 +4,7 @@ import logo from "/assets/img/soildarityLogo.png"
 import spade from "/assets/img/spade.svg";
 import hoe from "/assets/img/hoe.svg";
 
-export default (st) => html`
+export default (st, links) => html`
   <header>
         <img id="logo" width="100px" height="auto" src="${logo}" />
         
@@ -15,7 +15,7 @@ export default (st) => html`
             <img style="transform: rotate(-45deg);" width="auto" height="50px" src="${hoe}"/>
         </h1>
 
-        ${Nav(st)}
+        ${Nav(links)}
 
     </header>
 `;
