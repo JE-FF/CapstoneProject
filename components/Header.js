@@ -11,7 +11,7 @@ export default (st) => html`
         <!-- header title with inline spade and shovel images -->
         <h1 class="headerTitle">
             <img style="transform: rotate(45deg);" width="auto" height="50px" src="${spade}"/>
-            Soildarity${st.header}
+            Grown @ Home${st.header}
             <img style="transform: rotate(-45deg);" width="auto" height="50px" src="${hoe}"/>
         </h1>
 
