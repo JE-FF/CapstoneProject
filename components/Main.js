@@ -7,7 +7,6 @@ export default (st) => html`
       <p>LIST OF GARDENS GOES HERE.</p>
     </div>
 
-    <!-- THIS PROBABLY WONT WORK, FIX IT. -->
     <div class="centerContainer">
       ${views[st.view](st)}
     </div>
