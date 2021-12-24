@@ -47,7 +47,7 @@ router.hooks({
         .get(
           `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st.%20louis`
         )
-        .then(response => {
+        .then((response) => {
           state.Home.weather = {};
           state.Home.weather.city = response.data.name;
           state.Home.weather.temp = response.data.main.temp;
@@ -55,16 +55,14 @@ router.hooks({
           state.Home.weather.description = response.data.weather[0].main;
           done();
         })
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
     }
-  }
+  },
 });
 
-
-
-
-router.on({
-  "/": () => render(state.Home),
-  ":page": params => render(state[capitalize(params.page)]),
-  }).resolve();
-
+router
+  .on({
+    "/": () => render(state.Home),
+    ":page": (params) => render(state[capitalize(params.page)]),
+  })
+  .resolve();
