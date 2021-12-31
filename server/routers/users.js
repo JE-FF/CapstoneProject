@@ -1,18 +1,19 @@
 const { Router } = require("express");
-const garden = require("../models/Garden");
+const user = require("../models/User.js");
 const router = Router();
 
 // Create record in MongoDB
 router.post("/", (request, response) => {
-  const newGarden = new garden.model(request.body);
-  newGarden.save((err, garden) => {
-    return err ? response.sendStatus(500).json(err) : response.json(garden);
+  const newUser = new user.model(request.body);
+  newUser.save((error, data) => {
+    if (error) return response.sendStatus(500).json(error);
+    return response.json(data);
   });
 });
 
 // Query records from MongoDB
 router.get("/", (request, response) => {
-  garden.model.find({}, (error, data) => {
+  user.model.find({}, (error, data) => {
     if (error) return response.sendStatus(500).json(error);
     return response.json(data);
   });
@@ -20,7 +21,7 @@ router.get("/", (request, response) => {
 
 // findById is more efficient than querying the property within {} in the previous get request ^.
 router.get("/:id", (request, response) => {
-  garden.model.findById(request.params.id, (error, data) => {
+  user.model.findById(request.params.id, (error, data) => {
     if (error) return response.sendStatus(500).json(error);
     return response.json(data);
   });
@@ -28,7 +29,7 @@ router.get("/:id", (request, response) => {
 
 router.delete("/:id", (request, response) => {
   // findById params (ID that matches database entry, filter by entry properties, error or data)
-  garden.model.findByIdAndRemove(request.params.id, {}, (error, data) => {
+  user.model.findByIdAndRemove(request.params.id, {}, (error, data) => {
     if (error) return response.sendStatus(500).json(error);
     return response.json(data);
   });
@@ -37,22 +38,14 @@ router.delete("/:id", (request, response) => {
 // $set is a mongoose / mongoDB function that checks the properties are valid and commits changes.
 router.put("/:id", (request, response) => {
   const body = request.body;
-  garden.model.findByIdAndUpdate(
+  user.model.findByIdAndUpdate(
     request.params.id,
     {
       $set: {
-        contact: {
-          accountId: request.params.id,
-        },
-        location: {
-          lat: body.coord.lat,
-          lon: body.coord.lon,
-          city: body.coord.city,
-        },
-        productsAvailable: body.productsAvailable,
+        userName: body.userName,
+        gardens: body.gardens
       },
     },
-
     (error, data) => {
       if (error) return response.sendStatus(500).json(error);
       return response.json(request.body);
