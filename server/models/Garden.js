@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
-// TODO rebuild schema to include location, owner, produce, etc.
 const gardenSchema = new mongoose.Schema({
-  customer: {
-    type: String,
-    required: true
+  contact: {
+    accountId: String,
   },
-  crust: String,
-  cheese: String,
-  sauce: String,
-  toppings: [String]
+  location: {
+    lat: Number,
+    lon: Number,
+    city: String
+  },
+  productsAvailable: [String]
 });
 
 const Garden = mongoose.model("Garden", gardenSchema);

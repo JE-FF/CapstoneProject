@@ -41,11 +41,16 @@ router.put("/:id", (request, response) => {
     request.params.id,
     {
       $set: {
-        crust: body.crust,
-        cheese: body.cheese,
-        sauce: body.sauce,
-        toppings: body.toppings
-      }
+        contact: {
+          accountId: request.params.id,
+        },
+        location: {
+          lat: body.coord.lat,
+          lon: body.coord.lon,
+          city: body.coord.city,
+        },
+        productsAvailable: body.productsAvailable,
+      },
     },
 
     (error, data) => {
