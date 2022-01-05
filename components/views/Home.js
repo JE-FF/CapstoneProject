@@ -1,5 +1,4 @@
 import html from "html-literal";
-import sharkImage from "/assets/img/wsnaccad-Shark.svg";
 
 const kelvinToFahrenheit = kelvinTemp =>
   Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
