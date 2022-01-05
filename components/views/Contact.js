@@ -1,6 +1,8 @@
 import html from "html-literal";
 
 export default () => html`
+<p>Please enter your information below to find out more information, and to get involved!</p>
+
 <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xqknkrqw" method="post">
   <fieldset id="fs-frm-inputs">
     <label for="full-name">Full Name</label>

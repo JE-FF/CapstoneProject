@@ -88,6 +88,11 @@
     width: min-content;
   }
 
+  li > a:hover {
+    background-color: #6a3c2c;
+    color: #e7ece4;
+  }
+
   nav > .fa-bars {
     display: none;
   }
@@ -126,8 +131,10 @@
 
   .events {
     display: flex;
+    flex-direction: column;
     border: 1px solid;
     flex-basis: 25vw;
+    text-align: center;
   }
 
   .hidden--mobile {
