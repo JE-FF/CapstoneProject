@@ -23,13 +23,9 @@ nav > ul {
 }
 
 li > a:hover {
-    background-color: #6a3c2c;
-    color: #e7ece4;
-  }
-
-/* .hidden--mobile {
-    display: none !important;
-} */
+  background-color: #6a3c2c;
+  color: #e7ece4;
+}
 
 main {
   display: flex;
@@ -51,10 +47,20 @@ main {
   flex-basis: 75vh;
 }
 
+.centerContainer > * {
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
 .events {
   display: flex;
   border: 1px solid;
   flex-basis: 25vh;
+}
+
+.hidden--mobile {
+  display: none;
 }
 
 @media (min-width: 700px) {
@@ -92,15 +98,19 @@ main {
     flex-basis: 25vw;
     text-align: center;
   }
-  
+
   .centerContainer {
     border: 1px solid;
     flex-basis: 75vw;
   }
-  
+
   .events {
     display: flex;
     border: 1px solid;
     flex-basis: 25vw;
+  }
+
+  .hidden--mobile {
+    display: contents;
   }
 }
