@@ -4,66 +4,74 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Mobile-First, Default styles are for mobile devices, media queries adapt for desktop rendering.  */
+/* MOBILE RESPONSE */
+@media (max-width: 815px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: min-content;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: min-content;
-  justify-content: space-between;
-  align-items: center;
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 300px;
+  }
+
+  li > a:hover {
+    background-color: #6a3c2c;
+    color: #e7ece4;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150vh;
+  }
+
+  .gardenList {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    flex-basis: 25vh;
+    text-align: center;
+  }
+
+  .centerContainer {
+    border: 1px solid;
+    flex-basis: 75vh;
+  }
+
+  .centerContainer > * {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+
+  #fs-frm {
+    margin-top: 5%;
+  }
+
+  .events {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    flex-basis: 25vh;
+    text-align: center;
+  }
+
+  .hidden--mobile {
+    display: none;
+  }
 }
 
-nav > ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 300px;
-}
-
-li > a:hover {
-  background-color: #6a3c2c;
-  color: #e7ece4;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150vh;
-}
-
-.gardenList {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid;
-  flex-basis: 25vh;
-  text-align: center;
-}
-
-.centerContainer {
-  border: 1px solid;
-  flex-basis: 75vh;
-}
-
-.centerContainer > * {
-  margin-left: 5%;
-  margin-right: 5%;
-  text-align: center;
-}
-
-.events {
-  display: flex;
-  border: 1px solid;
-  flex-basis: 25vh;
-}
-
-.hidden--mobile {
-  display: none;
-}
-
-@media (min-width: 700px) {
+/* DESKTOP RESPONSE */
+@media (min-width: 815px) {
   header {
     display: flex;
     flex-direction: row;
@@ -71,6 +79,7 @@ main {
     height: min-content;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
   }
 
   nav > ul {
@@ -102,6 +111,17 @@ main {
   .centerContainer {
     border: 1px solid;
     flex-basis: 75vw;
+    min-height: min-content;
+  }
+
+  .centerContainer > * {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+
+  #fs-frm {
+    margin-top: 5%;
   }
 
   .events {
