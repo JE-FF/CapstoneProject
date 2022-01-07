@@ -9,4 +9,6 @@ export default (st) => html`
     ${kelvinToFahrenheit(st.weather.temp)}F. It feels like
     ${kelvinToFahrenheit(st.weather.feelsLike)}F.
   </h3>
+
+  <div id="map"></div>
 `;
