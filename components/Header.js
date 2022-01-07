@@ -1,6 +1,6 @@
 import html from "html-literal";
 import Nav from "./Nav";
-import logo from "/assets/img/soildarityLogo.png"
+import logo from "/assets/img/g@hLogo.png"
 import spade from "/assets/img/spade.svg";
 import hoe from "/assets/img/hoe.svg";
 

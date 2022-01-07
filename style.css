@@ -53,10 +53,6 @@
     text-align: center;
   }
 
-  #fs-frm {
-    margin-top: 5%;
-  }
-
   .events {
     display: flex;
     flex-direction: column;
@@ -67,6 +63,14 @@
 
   .hidden--mobile {
     display: none;
+  }
+
+  #fs-frm {
+    margin-top: 5%;
+  }
+
+  #map {
+    height: 180px;
   }
 }
 
@@ -125,10 +129,6 @@
     text-align: center;
   }
 
-  #fs-frm {
-    margin-top: 5%;
-  }
-
   .events {
     display: flex;
     flex-direction: column;
@@ -139,5 +139,13 @@
 
   .hidden--mobile {
     display: contents;
+  }
+
+  #fs-frm {
+    margin-top: 5%;
+  }
+
+  #map {
+    height: 180px;
   }
 }
