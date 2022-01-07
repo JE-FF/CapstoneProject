@@ -56,6 +56,16 @@ router.hooks({
         })
         .catch((err) => console.log(err));
     }
+
+    if (page === "Gardens") {
+      axios
+        .get(`${process.env.PIZZA_PLACE_API_URL}`)
+        .then((response) => {
+          state.Gardens.pizzas = response.data;
+          done();
+        })
+        .catch((err) => console.log(err));
+    }
   },
 });
 

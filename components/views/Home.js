@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-const kelvinToFahrenheit = kelvinTemp =>
+const kelvinToFahrenheit = (kelvinTemp) =>
   Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
 export default (st) => html`
@@ -9,5 +9,4 @@ export default (st) => html`
     ${kelvinToFahrenheit(st.weather.temp)}F. It feels like
     ${kelvinToFahrenheit(st.weather.feelsLike)}F.
   </h3>
-  </div>
 `;
