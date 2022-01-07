@@ -8,18 +8,30 @@
 @media (max-width: 815px) {
   header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    height: min-content;
+    height: 110px;
     justify-content: space-between;
     align-items: center;
   }
 
+  #homeButton {
+    display: none;
+  }
+
+  nav {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    background: none;
+  }
+
   nav > ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    width: 300px;
+    list-style-type: none;
+    background: none;
   }
 
   li > a:hover {
@@ -34,13 +46,13 @@
     height: 150vh;
   }
 
-  .gardenList {
+  /* .gardenList {
     display: flex;
     flex-direction: column;
     border: 1px solid;
     flex-basis: 25vh;
     text-align: center;
-  }
+  } */
 
   .centerContainer {
     border: 1px solid;
@@ -53,16 +65,17 @@
     text-align: center;
   }
 
-  .events {
+  /* .events {
     display: flex;
     flex-direction: column;
     border: 1px solid;
     flex-basis: 25vh;
     text-align: center;
-  }
+  } */
 
-  .hidden--mobile {
+  .hamburger {
     display: none;
+    z-index: 100;
   }
 
   #fs-frm {
@@ -80,16 +93,24 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: min-content;
+    height: 110px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+  }
+
+  nav {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    background: none;
   }
 
   nav > ul {
     display: flex;
     flex-direction: column;
     width: min-content;
+    list-style-type: none;
   }
 
   li > a:hover {
@@ -107,15 +128,16 @@
     height: calc(90vh - 125px);
     border-style: solid;
     border-width: 1px;
+    justify-content: center;
   }
 
-  .gardenList {
+  /* .gardenList {
     display: flex;
     flex-direction: column;
     border: 1px solid;
     flex-basis: 25vw;
     text-align: center;
-  }
+  } */
 
   .centerContainer {
     border: 1px solid;
@@ -129,15 +151,15 @@
     text-align: center;
   }
 
-  .events {
+  /* .events {
     display: flex;
     flex-direction: column;
     border: 1px solid;
     flex-basis: 25vw;
     text-align: center;
-  }
+  } */
 
-  .hidden--mobile {
+  .hamburger {
     display: contents;
   }
 

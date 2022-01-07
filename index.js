@@ -11,7 +11,8 @@ const router = new Navigo(window.location.origin);
 
 function render(st) {
   document.querySelector("#root").innerHTML = `
-    ${Header(st, state.Links)}
+    ${Header()}
+    ${Nav(state.Links)}
     ${Main(st)}
     ${Footer()}
   `;
@@ -31,7 +32,7 @@ function addEventListeners(st) {
   document
     .querySelector(".fa-bars")
     .addEventListener("click", () =>
-      document.querySelector("nav > ul").classList.toggle("hidden--mobile")
+      document.querySelector("nav > ul").classList.toggle("hamburger")
     );
 }
 
