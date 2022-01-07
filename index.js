@@ -56,6 +56,16 @@ router.hooks({
         })
         .catch((err) => console.log(err));
     }
+
+    if (page === "Gardens") {
+      axios
+        .get(`${process.env.GARDENS_API_URL}`)
+        .then((response) => {
+          state.Gardens.gardens = response.data;
+          done();
+        })
+        .catch((err) => console.log(err));
+    }
   },
 });
 
