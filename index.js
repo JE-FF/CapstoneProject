@@ -59,9 +59,9 @@ router.hooks({
 
     if (page === "Gardens") {
       axios
-        .get(`${process.env.PIZZA_PLACE_API_URL}`)
+        .get(`${process.env.GARDENS_API_URL}`)
         .then((response) => {
-          state.Gardens.pizzas = response.data;
+          state.Gardens.gardens = response.data;
           done();
         })
         .catch((err) => console.log(err));
