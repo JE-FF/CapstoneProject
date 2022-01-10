@@ -1,9 +1,10 @@
-import { Header, Nav, Main, Footer } from "./components";
-import * as state from "./store";
+import { Header, Nav, Main, Footer } from "/components";
+import * as state from "/store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
+import gardenMarker from "/assets/img/plot-icon.svg";
 
 dotenv.config();
 
@@ -35,16 +36,22 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hamburger")
     );
 
-
-    // STRETCH GOAL: Center map on user's current position
+  // STRETCH GOAL: Center map on user's current position
   if (st.view === "Home") {
-    const map = L.map("map").setView([51.505, -0.09], 13);
+    const map = L.map("map").setView([39.0675, -94.35152], 13);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
     const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
     const tiles = L.tileLayer(tileUrl, { attribution });
     tiles.addTo(map);
+
+    let gardenIcon = L.icon({
+      iconUrl: gardenMarker,
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+    });
+    const marker = L.marker([39.0675, -94.35152], { icon: gardenIcon }).addTo(map);
   }
 }
 

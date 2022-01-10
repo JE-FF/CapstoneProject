@@ -4,10 +4,10 @@ import homeButton from "/assets/img/home_black_24dp.svg";
 
 export default () => html`
   <header>
-    <img id="homeButton" width="40px" height="auto" src="${homeButton}" />
+    <img id="homeButton" src="${homeButton}" />
 
-    <img id="logo" width="100px" height="auto" src="${logo}" />
+    <img id="logo" src="${logo}" />
 
-    <div id="hideMe" width="100px"></div>
+    <div id="hideMe"></div>
   </header>
 `;

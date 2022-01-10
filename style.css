@@ -1,5 +1,6 @@
 * {
-  background-color: #e7ece4;
+  margin: 0;
+  background-color: rgb(231, 236, 228);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -9,14 +10,40 @@
   header {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
     height: 110px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
   }
 
   #homeButton {
+    background: none;
+    margin-left: 20px;
+    width: 40px;
+    height: auto;
     display: none;
+  }
+
+  #logo {
+    background: none;
+    width: 100px;
+    height: auto;
+  }
+
+  #fs-frm {
+    background: none;
+    margin-top: 5%;
+  }
+
+  #hideMe {
+    margin-right: 20px;
+    width: 40px;
+    display: none;
+  }
+
+  .hamburger {
+    background: none;
+    display: none;
+    z-index: 100;
   }
 
   nav {
@@ -24,6 +51,7 @@
     top: 8px;
     right: 8px;
     background: none;
+    z-index: 99;
   }
 
   nav > ul {
@@ -31,6 +59,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     list-style-type: none;
+    background: none;
+  }
+
+  nav > ul > li {
+    background: none;
+  }
+
+  nav > ul > li > a {
     background: none;
   }
 
@@ -46,16 +82,7 @@
     height: 150vh;
   }
 
-  /* .gardenList {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vh;
-    text-align: center;
-  } */
-
   .centerContainer {
-    border: 1px solid;
     flex-basis: 75vh;
   }
 
@@ -63,23 +90,6 @@
     margin-left: 5%;
     margin-right: 5%;
     text-align: center;
-  }
-
-  /* .events {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vh;
-    text-align: center;
-  } */
-
-  .hamburger {
-    display: none;
-    z-index: 100;
-  }
-
-  #fs-frm {
-    margin-top: 5%;
   }
 
   #map {
@@ -90,13 +100,43 @@
 /* DESKTOP RESPONSE */
 @media (min-width: 815px) {
   header {
+    position: fixed;
+    z-index: 99;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
     height: 110px;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+    background: rgba(231, 236, 238, 75%);
+  }
+
+  #homeButton {
+    background: none;
+    margin-left: 20px;
+    width: 40px;
+    height: auto;
+  }
+
+  #logo {
+    background: none;
+    width: 100px;
+    height: auto;
+  }
+
+  #fs-frm {
+    background: none;
+    margin-top: 5%;
+  }
+
+  #hideMe {
+    background: none;
+    margin-right: 20px;
+    width: 40px;
+  }
+
+  .hamburger {
+    display: contents;
+    z-index: 100;
   }
 
   nav {
@@ -104,6 +144,7 @@
     top: 8px;
     right: 8px;
     background: none;
+    z-index: 100;
   }
 
   nav > ul {
@@ -111,6 +152,16 @@
     flex-direction: column;
     width: min-content;
     list-style-type: none;
+    background: none;
+    z-index: 100;
+  }
+
+  nav > ul > li {
+    background: none;
+  }
+
+  nav > ul > li > a {
+    background: none;
   }
 
   li > a:hover {
@@ -125,22 +176,11 @@
   main {
     display: flex;
     flex-direction: row;
-    height: calc(90vh - 125px);
-    border-style: solid;
-    border-width: 1px;
+    height: 150vh;
     justify-content: center;
   }
 
-  /* .gardenList {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vw;
-    text-align: center;
-  } */
-
   .centerContainer {
-    border: 1px solid;
     flex-basis: 75vw;
     min-height: min-content;
   }
@@ -151,23 +191,8 @@
     text-align: center;
   }
 
-  /* .events {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vw;
-    text-align: center;
-  } */
-
-  .hamburger {
-    display: contents;
-  }
-
-  #fs-frm {
-    margin-top: 5%;
-  }
-
   #map {
-    height: 180px;
+    height: 60vh;
+    z-index: 0;
   }
 }
