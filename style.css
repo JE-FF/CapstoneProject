@@ -1,5 +1,6 @@
 * {
-  background-color: #e7ece4;
+  margin: 0;
+  background-color: rgb(231, 236, 228);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -8,18 +9,67 @@
 @media (max-width: 815px) {
   header {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: min-content;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 110px;
+    justify-content: center;
+    background: #adbf5a;
+  }
+
+  #homeButton {
+    background: none;
+    margin-left: 20px;
+    width: 40px;
+    height: auto;
+    display: none;
+  }
+
+  #logo {
+    background: none;
+    width: 100px;
+    height: auto;
+  }
+
+  #fs-frm {
+    background: none;
+    margin-top: 5%;
+  }
+
+  /* #hideMe is an empty element to allow for simple positioning within the header */
+  #hideMe {
+    margin-right: 20px;
+    /* width: 40px; */
+    display: none;
+  }
+
+  .hamburger {
+    background: none;
+    display: none;
+    z-index: 100;
+  }
+
+  nav {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    background: none;
+    z-index: 99;
   }
 
   nav > ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
-    width: 300px;
+    list-style-type: none;
+    background: none;
+  }
+
+  nav > ul > li {
+    background: none;
+  }
+
+  nav > ul > li > a {
+    background: none;
   }
 
   li > a:hover {
@@ -31,121 +81,169 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 150vh;
-  }
-
-  .gardenList {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vh;
-    text-align: center;
-  }
-
-  .centerContainer {
-    border: 1px solid;
-    flex-basis: 75vh;
-  }
-
-  .centerContainer > * {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-  }
-
-  .events {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vh;
-    text-align: center;
-  }
-
-  .hidden--mobile {
-    display: none;
-  }
-
-  #fs-frm {
-    margin-top: 5%;
+    height: 100vh;
   }
 
   #map {
     height: 180px;
+  }
+
+  .leaflet-marker-icon {
+    background: none;
   }
 }
 
 /* DESKTOP RESPONSE */
 @media (min-width: 815px) {
   header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: min-content;
+    width: 100vw;
+    height: 120px;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  header > a {
+    background: none;
+  }
+
+  #logo {
+    margin-top: 5px;
+    margin-left: 20px;
+    background: none;
+    width: 100px;
+    height: 108.5px;
+  }
+
+  #fs-frm {
+    background: none;
+    margin-top: 5%;
+  }
+
+  #hideMe {
+    background: none;
+    margin-right: 20px;
+    width: 40px;
+  }
+
+  .hamburger {
+    display: none;
+    z-index: 100;
+  }
+
+  nav {
+    position: fixed;
+    top: 50px;
+    right: 65px;
+    background: none;
+    z-index: 100;
   }
 
   nav > ul {
     display: flex;
-    flex-direction: column;
-    width: min-content;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 500px;
+    list-style-type: none;
+    background: none;
+    z-index: 100;
+  }
+
+  nav > ul > li {
+    background: none;
+    text-align: right;
+  }
+
+  nav > ul > li > a {
+    background: none;
+    color: #000000;
   }
 
   li > a:hover {
-    background-color: #6a3c2c;
-    color: #e7ece4;
+    background-color: #abdf5a;
   }
 
-  nav > .fa-bars {
-    display: none;
+  .fa-bars {
+    top: 60px;
+    background: none;
+    font-size: 2.5em;
+    margin: 40px;
   }
 
   main {
     display: flex;
+    flex-direction: column;
+    height: min-content;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+  }
+
+  #homeNavContainer {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    width: 500px;
+    height: 400px;
+  }
+
+  #homeNavContainer > ul {
+    display: flex;
     flex-direction: row;
-    height: calc(90vh - 125px);
-    border-style: solid;
-    border-width: 1px;
+    list-style-type: none;
+    justify-content: space-around;
+    height: 75px;
+    align-items: center;
   }
 
-  .gardenList {
+  #homeNavContainer > ul > li {
+    vertical-align: middle;
+  }
+
+  #gardenViewContainer {
     display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vw;
-    text-align: center;
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .centerContainer {
-    border: 1px solid;
-    flex-basis: 75vw;
-    min-height: min-content;
+  #gardenList {
+    background: rgba(255, 255, 255, 0.85);
+    width: 485px;
+    min-height: 550px;
+  }
+  #gardenList > li {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom-color: lightgrey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-left: -40px;
+    height: 150px;
+    text-align: left;
+    list-style-type: none;
   }
 
-  .centerContainer > * {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-  }
-
-  .events {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    flex-basis: 25vw;
-    text-align: center;
-  }
-
-  .hidden--mobile {
-    display: contents;
-  }
-
-  #fs-frm {
-    margin-top: 5%;
+  #gardenList > li > b {
+    background: rgba(255, 255, 255, 0.85);
   }
 
   #map {
-    height: 180px;
+    align-self: center;
+    height: 570px;
+    width: 550px;
+    z-index: 1;
+  }
+
+  .leaflet-marker-icon {
+    background: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 1px;
+    margin-left: 0px;
   }
 }

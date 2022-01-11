@@ -1,12 +1,22 @@
 import html from "html-literal";
-
-const kelvinToFahrenheit = (kelvinTemp) =>
-  Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+import gardenBackground from "/assets/img/jed-owen-1JgUGDdcWnM-unsplash.jpg";
 
 export default (st) => html`
-  <h3>
-    Temperature in ${st.weather.city} is
-    ${kelvinToFahrenheit(st.weather.temp)}F. It feels like
-    ${kelvinToFahrenheit(st.weather.feelsLike)}F.
-  </h3>
+  <img src="${gardenBackground}" />
+  <div id="homeNavContainer">
+    <ul>
+      <li>Grow</li>
+      <li>Eat</li>
+      <li>Learn</li>
+    </ul>
+    <div id="growPane">
+      GROW PANE TEXT HERE
+    </div>
+    <div id="eatPane">
+      EAT PANE TEXT HERE
+    </div>
+    <div id="learnPane">
+      LEARN PANE TEXT HERE
+    </div>
+  </div>
 `;
