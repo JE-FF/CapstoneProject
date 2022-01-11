@@ -13,6 +13,7 @@
     width: 100vw;
     height: 110px;
     justify-content: center;
+    background: #adbf5a;
   }
 
   #homeButton {
@@ -34,9 +35,10 @@
     margin-top: 5%;
   }
 
+  /* #hideMe is an empty element to allow for simple positioning within the header */
   #hideMe {
     margin-right: 20px;
-    width: 40px;
+    /* width: 40px; */
     display: none;
   }
 
@@ -79,21 +81,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 150vh;
-  }
-
-  .centerContainer {
-    flex-basis: 75vh;
-  }
-
-  .centerContainer > * {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
+    height: 100vh;
   }
 
   #map {
     height: 180px;
+  }
+
+  .leaflet-marker-icon {
+    background: none;
   }
 }
 
@@ -101,26 +97,26 @@
 @media (min-width: 815px) {
   header {
     position: fixed;
+    top: 0;
     z-index: 99;
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 110px;
+    height: 120px;
     justify-content: space-between;
-    background: rgba(231, 236, 238, 75%);
+    background: rgba(255, 255, 255, 0.85);
   }
 
-  #homeButton {
+  header > a {
     background: none;
-    margin-left: 20px;
-    width: 40px;
-    height: auto;
   }
 
   #logo {
+    margin-top: 5px;
+    margin-left: 20px;
     background: none;
     width: 100px;
-    height: auto;
+    height: 108.5px;
   }
 
   #fs-frm {
@@ -135,22 +131,23 @@
   }
 
   .hamburger {
-    display: contents;
+    display: none;
     z-index: 100;
   }
 
   nav {
     position: fixed;
-    top: 8px;
-    right: 8px;
+    top: 50px;
+    right: 65px;
     background: none;
     z-index: 100;
   }
 
   nav > ul {
     display: flex;
-    flex-direction: column;
-    width: min-content;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 500px;
     list-style-type: none;
     background: none;
     z-index: 100;
@@ -158,41 +155,74 @@
 
   nav > ul > li {
     background: none;
+    text-align: right;
   }
 
   nav > ul > li > a {
     background: none;
+    color: #000000;
   }
 
   li > a:hover {
-    background-color: #6a3c2c;
-    color: #e7ece4;
+    background-color: #abdf5a;
   }
 
-  nav > .fa-bars {
-    display: none;
+  .fa-bars {
+    top: 60px;
+    background: none;
+    font-size: 2.5em;
+    margin: 40px;
   }
 
   main {
     display: flex;
+    flex-direction: column;
+    height: min-content;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+  }
+
+  #gardenViewContainer {
+    display: flex;
     flex-direction: row;
-    height: 150vh;
     justify-content: center;
   }
 
-  .centerContainer {
-    flex-basis: 75vw;
-    min-height: min-content;
+  #gardenList {
+    background: rgba(255, 255, 255, 0.85);
+    width: 485px;
+    min-height: 550px;
+  }
+  #gardenList > li {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom-color: lightgrey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-left: -40px;
+    height: 150px;
+    text-align: left;
+    list-style-type: none;
   }
 
-  .centerContainer > * {
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
+  #gardenList > li > b {
+    background: rgba(255, 255, 255, 0.85);
   }
 
   #map {
-    height: 60vh;
-    z-index: 0;
+    align-self: center;
+    height: 570px;
+    width: 550px;
+    z-index: 1;
+  }
+
+  .leaflet-marker-icon {
+    background: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 1px;
+    margin-left: 0px;
   }
 }

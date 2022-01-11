@@ -1,13 +1,12 @@
 import html from "html-literal";
 import logo from "/assets/img/g@hLogo.png";
-import homeButton from "/assets/img/home_black_24dp.svg";
 
 export default () => html`
   <header>
-    <img id="homeButton" src="${homeButton}" />
+    <a href="/"><img id="logo" src="${logo}" alt="site logo, and link to homepage"/></a>
 
-    <img id="logo" src="${logo}" />
+    <i class="fas fa-bars" aria-hidden="true"></i>
 
-    <div id="hideMe"></div>
+    <!-- <div id="hideMe"></div> -->
   </header>
 `;
