@@ -3,10 +3,6 @@ import * as views from "./views";
 
 export default (st) => html`
   <main>
-
-    <div class="centerContainer">
-      ${views[st.view](st)}
-    </div>
-
+    ${views[st.view](st)}
   </main>
 `;

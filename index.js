@@ -37,7 +37,7 @@ function addEventListeners(st) {
     );
 
   // STRETCH GOAL: Center map on user's current position
-  if (st.view === "Home") {
+  if (st.view === "Gardens") {
     const map = L.map("map").setView([39.0675, -94.35152], 13);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -51,7 +51,10 @@ function addEventListeners(st) {
       iconSize: [32, 32],
       iconAnchor: [16, 16],
     });
-    const marker = L.marker([39.0675, -94.35152], { icon: gardenIcon }).addTo(map);
+
+    st.gardens.forEach(garden => {
+      return L.marker([garden.location.lat, garden.location.lon], { icon: gardenIcon }).addTo(map);
+    })
   }
 }
 
@@ -60,18 +63,18 @@ router.hooks({
     const page =
       params && params.hasOwnProperty("page")
         ? capitalize(params.page)
-        : "Home";
-    if (page === "Home") {
+        : "Gardens";
+    if (page === "Gardens") {
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st.%20louis`
         )
         .then((response) => {
-          state.Home.weather = {};
-          state.Home.weather.city = response.data.name;
-          state.Home.weather.temp = response.data.main.temp;
-          state.Home.weather.feelsLike = response.data.main.feels_like;
-          state.Home.weather.description = response.data.weather[0].main;
+          state.Gardens.weather = {};
+          state.Gardens.weather.city = response.data.name;
+          state.Gardens.weather.temp = response.data.main.temp;
+          state.Gardens.weather.feelsLike = response.data.main.feels_like;
+          state.Gardens.weather.description = response.data.weather[0].main;
           done();
         })
         .catch((err) => console.log(err));
