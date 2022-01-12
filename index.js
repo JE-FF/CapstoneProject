@@ -33,8 +33,47 @@ function addEventListeners(st) {
   document
     .querySelector(".fa-bars")
     .addEventListener("click", () =>
-      document.querySelector("nav > ul").classList.toggle("hamburger")
+      document.querySelector("nav > ul").classList.toggle("hidden")
     );
+
+  if (st.view === "Home") {
+    const eatOption = document.querySelector(".eatOption");
+    const growOption = document.querySelector(".growOption");
+    const learnOption = document.querySelector(".learnOption");
+
+    const selectionBar = document.querySelector(".selectionBar");
+
+    const eatPane = document.querySelector(".eatPane");
+    const growPane = document.querySelector(".growPane");
+    const learnPane = document.querySelector(".learnPane");
+
+    eatOption.addEventListener("click", () => {
+      selectionBar.classList.add("eatSelected");
+      selectionBar.classList.remove("growSelected", "learnSelected");
+
+      eatPane.classList.remove("hidden");
+      growPane.classList.add("hidden");
+      learnPane.classList.add("hidden");
+    });
+
+    growOption.addEventListener("click", () => {
+      selectionBar.classList.add("growSelected");
+      selectionBar.classList.remove("eatSelected", "learnSelected");
+
+      growPane.classList.remove("hidden");
+      eatPane.classList.add("hidden");
+      learnPane.classList.add("hidden");
+    });
+
+    learnOption.addEventListener("click", () => {
+      selectionBar.classList.add("learnSelected");
+      selectionBar.classList.remove("eatSelected", "growSelected");
+      
+      learnPane.classList.remove("hidden");
+      growPane.classList.add("hidden");
+      eatPane.classList.add("hidden");
+    });
+  }
 
   // STRETCH GOAL: Center map on user's current position
   if (st.view === "Gardens") {
@@ -52,9 +91,11 @@ function addEventListeners(st) {
       iconAnchor: [16, 16],
     });
 
-    st.gardens.forEach(garden => {
-      return L.marker([garden.location.lat, garden.location.lon], { icon: gardenIcon }).addTo(map);
-    })
+    st.gardens.forEach((garden) => {
+      return L.marker([garden.location.lat, garden.location.lon], {
+        icon: gardenIcon,
+      }).addTo(map);
+    });
   }
 }
 
@@ -64,6 +105,7 @@ router.hooks({
       params && params.hasOwnProperty("page")
         ? capitalize(params.page)
         : "Gardens";
+
     if (page === "Gardens") {
       axios
         .get(
@@ -95,6 +137,6 @@ router.hooks({
 router
   .on({
     "/": () => render(state.Home),
-    ":page": (params) => render(state[capitalize(params.page)]),
+    ":view": (params) => render(state[capitalize(params.view)]),
   })
   .resolve();
