@@ -9,8 +9,8 @@ export default () => html`
     id="gardenRegistrationForm"
     name="garden-registration-form"
     accept-charset="utf-8"
-    action="${GARDENS_API_URL}"
-    method="post"
+    action=""
+    method="POST"
   >
     <fieldset id="garden-Registration-inputs">
       <label for="nameOfGarden">Garden Name:</label>
