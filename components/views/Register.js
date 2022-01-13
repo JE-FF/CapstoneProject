@@ -1,5 +1,4 @@
 import html from "html-literal";
-import GARDENS_API_URL from "/.env";
 
 export default () => html`
   <p>
