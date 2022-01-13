@@ -7,13 +7,21 @@ import learnLogo from "/assets/img/local_library_black_24dp.svg";
 export default (st) => html`
   <div class="homeMenuContainer">
     <div class="homeMenuOptions">
-      <a class="eatOption" aria-selected="false"><br><img src="${eatLogo}" /><br>Eat</a>
-      <a class="growOption"><br><img src="${gardenLogo}" /><br>Grow</a>
-      <a class="learnOption"><br><img src="${learnLogo}" /><br>Learn</a>
+      <a class="eatOption" aria-selected="false">
+        <br /><img src="${eatLogo}"/><br />Eat<br /><br />
+        <div class="eatSelected selectionBar"></div
+      ></a>
+      <a class="growOption"
+        ><br /><img src="${gardenLogo}"/><br />Grow<br /><br />
+        <div class="growSelected selectionBar hidden"></div
+      ></a>
+      <a class="learnOption"
+        ><br /><img src="${learnLogo}"/><br />Learn<br /><br />
+        <div class="learnSelected selectionBar hidden"></div
+      ></a>
     </div>
-    <div class="selectionBar eatSelected"></div>
 
-    <br>
+    <br />
 
     <div class="eatPane">
       <h3>The best meals are homemade, the best food is homegrown.</h3>
