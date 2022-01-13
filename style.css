@@ -1,6 +1,11 @@
+:root {
+  --white: #ffffff;
+  --offWhite: #f6f6f6;
+}
+
 * {
   margin: 0;
-  background-color: #f6f6f6;
+  background-color: var(--offWhite);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -13,7 +18,7 @@
     width: 100vw;
     height: 120px;
     justify-content: space-between;
-    background: #ffffff;
+    background: var(--white);
   }
 
   header > a {
@@ -74,7 +79,7 @@
   }
 
   li > a:hover {
-    background-color: #f6f6f6;
+    background-color: var(--offWhite);
   }
 
   .fa-bars {
@@ -134,18 +139,6 @@
     background-color: #000000;
   }
 
-  .eatSelected {
-    margin-left: 32px;
-  }
-
-  .growSelected {
-    margin-left: 170px;
-  }
-
-  .learnSelected {
-    margin-left: 308px;
-  }
-
   #gardenViewContainer {
     display: flex;
     flex-direction: column;
@@ -160,7 +153,7 @@
   }
   #gardenList > li {
     background: rgba(255, 255, 255, 0.85);
-    border-bottom-color: #f6f6f6;
+    border-bottom-color: var(--offWhite);
     border-bottom-style: solid;
     border-bottom-width: 2px;
     margin-left: -40px;
@@ -206,7 +199,7 @@
     width: 100vw;
     height: 120px;
     justify-content: space-between;
-    background: #ffffff;
+    background: var(--white);
   }
 
   header > a {
@@ -262,7 +255,7 @@
   }
 
   li > a:hover {
-    background-color: #f6f6f6;
+    background-color: var(--offWhite);
   }
 
   .fa-bars {
@@ -326,18 +319,6 @@
     background-color: #000000;
   }
 
-  .eatSelected {
-    margin-left: 46px;
-  }
-
-  .growSelected {
-    margin-left: 212.5px;
-  }
-
-  .learnSelected {
-    margin-left: 379px;
-  }
-
   #gardenViewContainer {
     display: flex;
     flex-direction: row;
@@ -351,7 +332,7 @@
   }
   #gardenList > li {
     background: rgba(255, 255, 255, 0.85);
-    border-bottom-color: #f6f6f6;
+    border-bottom-color: var(--offWhite);
     border-bottom-style: solid;
     border-bottom-width: 2px;
     margin-left: -40px;

@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const gardenSchema = new mongoose.Schema({
   nameOfGarden: { type: String, required: true },
   productsAvailable: [String],
-  hours: [Number, Number],
+  open: { type: String, required: true },
+  close: { type: String, required: true },
   location: {
     lat: { type: Number, required: true },
     lon: { type: Number, required: true },

@@ -3,5 +3,6 @@ export default [
     {title: "Gardens", text: "Gardens"},
     {title: "About", text: "About"},
     {title: "Contact", text: "Contact"},
-    {title: "Events", text: "Events"},
+    {title: "Register", text: "Register Garden"},
+
 ];

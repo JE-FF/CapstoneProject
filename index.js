@@ -36,29 +36,34 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden")
     );
 
+    // Functionality for Home menu panel
   if (st.view === "Home") {
     const eatOption = document.querySelector(".eatOption");
     const growOption = document.querySelector(".growOption");
     const learnOption = document.querySelector(".learnOption");
 
-    const selectionBar = document.querySelector(".selectionBar");
+    const eatSelected = document.querySelector(".eatSelected");
+    const growSelected = document.querySelector(".growSelected");
+    const learnSelected = document.querySelector(".learnSelected");
 
     const eatPane = document.querySelector(".eatPane");
     const growPane = document.querySelector(".growPane");
     const learnPane = document.querySelector(".learnPane");
 
     eatOption.addEventListener("click", () => {
-      selectionBar.classList.add("eatSelected");
-      selectionBar.classList.remove("growSelected", "learnSelected");
-
+      eatSelected.classList.remove("hidden");
+      growSelected.classList.add("hidden");
+      learnSelected.classList.add("hidden");
+      
       eatPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       learnPane.classList.add("hidden");
     });
 
     growOption.addEventListener("click", () => {
-      selectionBar.classList.add("growSelected");
-      selectionBar.classList.remove("eatSelected", "learnSelected");
+      growSelected.classList.remove("hidden");
+      eatSelected.classList.add("hidden");
+      learnSelected.classList.add("hidden");
 
       growPane.classList.remove("hidden");
       eatPane.classList.add("hidden");
@@ -66,9 +71,10 @@ function addEventListeners(st) {
     });
 
     learnOption.addEventListener("click", () => {
-      selectionBar.classList.add("learnSelected");
-      selectionBar.classList.remove("eatSelected", "growSelected");
-      
+      learnSelected.classList.remove("hidden");
+      growSelected.classList.add("hidden");
+      eatSelected.classList.add("hidden");
+
       learnPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       eatPane.classList.add("hidden");
