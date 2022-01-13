@@ -31,7 +31,7 @@ export default (st) => html`
     <div class="growPane hidden">
       <h3>Green thumbs earn green.</h3>
       <p>Sell the fruits of your garden to neighbors in your community.</p>
-      <a href="/" data-navigo>Register your garden</a>
+      <a href="/Register" data-navigo>Register your garden</a>
     </div>
     <div class="learnPane hidden">
       <h3>Find out more.</h3>
