@@ -26,12 +26,7 @@ export default () => html`
       <input type="time" name="open" id="open" value="10:00" required="true" />
 
       <label for="close">Close:</label>
-      <input
-        type="time"
-        name="close"
-        id="close"
-        required="true"
-      />
+      <input type="time" name="close" id="close" required="true" />
 
       <label for="address">Address:</label>
       <input
@@ -41,7 +36,7 @@ export default () => html`
         placeholder="1234 Main Street"
         required="true"
       />
-
+      
       <label for="city">City:</label>
       <input
         type="text"

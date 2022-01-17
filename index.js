@@ -29,6 +29,40 @@ function addEventListeners(st) {
     })
   );
 
+  if (st.view === "Register") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        nameOfGarden: inputList.nameOfGarden.value,
+        productsAvailable: null,
+        open: inputList.open.value,
+        close: inputList.close.value,
+        location: {
+          lat: inputList.lat.value,
+          lon: inputList.lon.value,
+          city: inputList.city.value,
+          address: inputList.address.value,
+        },
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.GARDENS_API_URL}`, requestData)
+        .then((response) => {
+          // Push new garden onto Gardens state gardens array so it is displayed in the garden list
+          state.Gardens.gardens.push(response.data);
+          router.navigate("/Gardens");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  }
+
   // Add menu toggle to bars icon in nav bar
   document
     .querySelector(".fa-bars")
@@ -36,7 +70,7 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden")
     );
 
-    // Functionality for Home menu panel
+  // Functionality for Home menu panel
   if (st.view === "Home") {
     const eatOption = document.querySelector(".eatOption");
     const growOption = document.querySelector(".growOption");
@@ -54,7 +88,7 @@ function addEventListeners(st) {
       eatSelected.classList.remove("hidden");
       growSelected.classList.add("hidden");
       learnSelected.classList.add("hidden");
-      
+
       eatPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       learnPane.classList.add("hidden");
@@ -81,7 +115,7 @@ function addEventListeners(st) {
     });
   }
 
-  // STRETCH GOAL: Center map on user's current position
+  // Leaflet map functionality
   if (st.view === "Gardens") {
     const map = L.map("map").setView([39.0675, -94.35152], 13);
     const attribution =
