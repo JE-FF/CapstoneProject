@@ -2,6 +2,7 @@
   --white: #ffffff;
   --offWhite: #f6f6f6;
   --black: #000000;
+  --offBlack: #333333;
 }
 
 * {
@@ -47,7 +48,7 @@
     position: absolute;
     z-index: 100;
     width: 100%;
-    height: min-content%;
+    height: min-content;
     background: none;
   }
 
@@ -99,7 +100,9 @@
   }
 
   #homeBackground {
-    position: relative;
+    /* position: relative; */
+    width: 100%;
+    height: auto;
   }
 
   .homeMenuContainer {
@@ -150,7 +153,7 @@
   }
 
   .homeMenuLink > a > h2:hover {
-    background: rgb(51, 51, 51);
+    background: var(--offBlack);
   }
 
   .eatOption {
@@ -181,13 +184,13 @@
   }
 
   #gardenList {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
     width: calc(100vw - 30px);
     min-height: 300px;
     order: 1;
   }
   #gardenList > li {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
     border-bottom-color: var(--offWhite);
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -198,7 +201,7 @@
   }
 
   #gardenList > li > b {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
   }
 
   #map {
@@ -355,7 +358,7 @@
   }
 
   .homeMenuLink > a > h2:hover {
-    background: rgb(51, 51, 51);
+    background: var(--offBlack);
   }
 
   .eatOption {
