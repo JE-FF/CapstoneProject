@@ -1,6 +1,7 @@
 :root {
   --white: #ffffff;
   --offWhite: #f6f6f6;
+  --black: #000000;
 }
 
 * {
@@ -46,6 +47,7 @@
     position: absolute;
     z-index: 100;
     width: 100%;
+    height: min-content%;
     background: none;
   }
 
@@ -75,7 +77,7 @@
     border-radius: 40px;
     text-decoration: none;
     background: none;
-    color: #000000;
+    color: var(--black);
   }
 
   li > a:hover {
@@ -103,7 +105,7 @@
   .homeMenuContainer {
     position: relative;
     width: 100vw;
-    height: 300px;
+    height: 450px;
   }
 
   .homeMenuOptions {
@@ -116,6 +118,39 @@
 
   .homeMenuOptions > a:hover {
     cursor: pointer;
+  }
+
+  .menuPane > h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 17.5px;
+    margin-right: 17.5px;
+  }
+
+  .menuPane > p {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .homeMenuLink {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+  }
+  .homeMenuLink > a {
+    text-decoration: none;
+  }
+
+  .homeMenuLink > a > h2 {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+  }
+
+  .homeMenuLink > a > h2:hover {
+    background: rgb(51, 51, 51);
   }
 
   .eatOption {
@@ -136,7 +171,7 @@
   .selectionBar {
     height: 5px;
     width: 75px;
-    background-color: #000000;
+    background-color: var(--black);
   }
 
   #gardenViewContainer {
@@ -182,7 +217,6 @@
     background: none;
   }
 
-
   footer {
     position: relative;
   }
@@ -214,9 +248,8 @@
     height: 108.5px;
   }
 
-  #fs-frm {
-    background: none;
-    margin-top: 5%;
+  .fa-bars {
+    display: none !important;
   }
 
   .hidden {
@@ -226,7 +259,7 @@
   nav {
     position: fixed;
     top: 50px;
-    right: 65px;
+    right: 0px;
     background: none;
     z-index: 100;
   }
@@ -251,18 +284,11 @@
     border-radius: 40px;
     text-decoration: none;
     background: none;
-    color: #000000;
+    color: var(--black);
   }
 
   li > a:hover {
     background-color: var(--offWhite);
-  }
-
-  .fa-bars {
-    top: 60px;
-    background: none;
-    font-size: 2.5em;
-    margin: 40px;
   }
 
   main {
@@ -270,12 +296,13 @@
     flex-direction: column;
     height: min-content;
     text-align: center;
-    margin-top: 150px;
-    margin-bottom: 20px;
+    margin-top: 120px;
   }
 
   #homeBackground {
-    margin-top: -150px;
+    margin-top: -120px;
+    width: 100%;
+    height: auto;
   }
 
   .homeMenuContainer {
@@ -298,6 +325,39 @@
     cursor: pointer;
   }
 
+  .menuPane > h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 17.5px;
+    margin-right: 17.5px;
+  }
+
+  .menuPane > p {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .homeMenuLink {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+  }
+  .homeMenuLink > a {
+    text-decoration: none;
+  }
+
+  .homeMenuLink > a > h2 {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+  }
+
+  .homeMenuLink > a > h2:hover {
+    background: rgb(51, 51, 51);
+  }
+
   .eatOption {
     width: 75px;
     height: 75px;
@@ -316,52 +376,93 @@
   .selectionBar {
     height: 5px;
     width: 75px;
-    background-color: #000000;
-  }
-
-  #gardenViewContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    background-color: var(--black);
   }
 
   #gardenList {
-    background: rgba(255, 255, 255, 0.85);
-    width: 485px;
+    position: absolute;
+    background: var(--white);
+    width: 300px;
     min-height: 550px;
+    z-index: 10;
   }
   #gardenList > li {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
     border-bottom-color: var(--offWhite);
     border-bottom-style: solid;
     border-bottom-width: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: -40px;
     height: 150px;
     text-align: left;
     list-style-type: none;
   }
 
+  #gardenList > li:hover {
+    background: var(--offWhite);
+  }
+
   #gardenList > li > b {
-    background: rgba(255, 255, 255, 0.85);
+    background: none;
   }
 
   #map {
-    align-self: center;
-    height: 570px;
-    width: 550px;
-    z-index: 1;
+    position: absolute;
+    height: calc(100% - 120px);
+    width: 100%;
+    z-index: 0;
   }
 
   .leaflet-marker-icon {
     background: none;
   }
 
-  .leaflet-top {
-    background: none;
+  #fs-frm {
+    text-align: left;
+    align-self: center;
+    width: 500px;
+  }
+
+  #fs-frm-inputs > input {
+    width: 500px;
+    height: 35px;
+  }
+
+  #fs-frm-inputs > textarea {
+    width: 500px;
+  }
+
+  #fs-frm > input {
+    height: 50px;
+    width: 535px;
+  }
+
+  #gardenRegistrationForm {
+    text-align: left;
+    align-self: center;
+    width: 500px;
+  }
+
+  #garden-Registration-inputs > input {
+    width: 500px;
+    height: 35px;
+  }
+
+  #garden-Registration-inputs > #open {
+    width: 233.5px;
+  }
+
+  #garden-Registration-inputs > #close {
+    width: 233.5px;
+  }
+
+  #gardenRegistrationForm > input {
+    height: 50px;
+    width: 535px;
   }
 
   footer {
-    position: fixed;
     bottom: 1px;
     margin-left: 0px;
   }

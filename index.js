@@ -29,6 +29,41 @@ function addEventListeners(st) {
     })
   );
 
+  // prevent default html form action, structure form input, POST structured input to gardens api.
+  if (st.view === "Register") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        nameOfGarden: inputList.nameOfGarden.value,
+        productsAvailable: null,
+        open: inputList.open.value,
+        close: inputList.close.value,
+        location: {
+          lat: inputList.lat.value,
+          lon: inputList.lon.value,
+          city: inputList.city.value,
+          address: inputList.address.value,
+        },
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.GARDENS_API_URL}`, requestData)
+        .then((response) => {
+          // Push new garden onto Gardens state gardens array so it is displayed in the garden list
+          state.Gardens.gardens.push(response.data);
+          router.navigate("/Gardens");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  }
+
   // Add menu toggle to bars icon in nav bar
   document
     .querySelector(".fa-bars")
@@ -36,28 +71,46 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden")
     );
 
-    // Functionality for Home menu panel
+    // if desktop view, then do not hide nav under hamburger menu
+    if (document.querySelector(":root").clientWidth > 815) {
+      document.querySelector("nav > ul").classList.remove("hidden");
+      document.querySelector(".fa-bars").classList.add("hidden");
+    }
+
+  // Functionality for home menu & background
   if (st.view === "Home") {
+    // Clickable logo and text
     const eatOption = document.querySelector(".eatOption");
     const growOption = document.querySelector(".growOption");
     const learnOption = document.querySelector(".learnOption");
 
+    // Selection indicator bars
     const eatSelected = document.querySelector(".eatSelected");
     const growSelected = document.querySelector(".growSelected");
     const learnSelected = document.querySelector(".learnSelected");
 
+    // Menu content
     const eatPane = document.querySelector(".eatPane");
     const growPane = document.querySelector(".growPane");
     const learnPane = document.querySelector(".learnPane");
+
+    // Background
+    const eatBackground = document.querySelector(".eatBackground");
+    const growBackground = document.querySelector(".growBackground");
+    const learnBackground = document.querySelector(".learnBackground");
 
     eatOption.addEventListener("click", () => {
       eatSelected.classList.remove("hidden");
       growSelected.classList.add("hidden");
       learnSelected.classList.add("hidden");
-      
+
       eatPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       learnPane.classList.add("hidden");
+
+      eatBackground.classList.remove("hidden");
+      growBackground.classList.add("hidden");
+      learnBackground.classList.add("hidden");
     });
 
     growOption.addEventListener("click", () => {
@@ -68,6 +121,10 @@ function addEventListeners(st) {
       growPane.classList.remove("hidden");
       eatPane.classList.add("hidden");
       learnPane.classList.add("hidden");
+
+      eatBackground.classList.add("hidden");
+      growBackground.classList.remove("hidden");
+      learnBackground.classList.add("hidden");
     });
 
     learnOption.addEventListener("click", () => {
@@ -78,12 +135,16 @@ function addEventListeners(st) {
       learnPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       eatPane.classList.add("hidden");
+
+      eatBackground.classList.add("hidden");
+      growBackground.classList.add("hidden");
+      learnBackground.classList.remove("hidden");
     });
   }
 
-  // STRETCH GOAL: Center map on user's current position
+  // Leaflet map functionality
   if (st.view === "Gardens") {
-    const map = L.map("map").setView([39.0675, -94.35152], 13);
+    const map = L.map("map").setView([39.07193, -94.38628], 13);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 

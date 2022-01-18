@@ -1,9 +1,15 @@
 import html from "html-literal";
 
 export default () => html`
-  <p>
-    Fill out the form below to register your garden with Grown @ Home.
-  </p>
+
+<div class="pageDescription">
+    <h1>Register Your Garden</h1>
+    <p>
+      Fill out the form completely to register your garden.<br>
+      If you require any assistance, please don't hesitate to <a href="/Contact" data-navigo>contact us!</a>
+    </p>
+    <br />
+  </div><br>
 
   <form
     id="gardenRegistrationForm"
@@ -20,18 +26,12 @@ export default () => html`
         id="nameOfGarden"
         placeholder="Jeff's Home Garden"
         required="true"
-      />
+      /><br><br>
 
-      <label for="open">Open:</label>
+      <label for="open">Open:</label><br>
       <input type="time" name="open" id="open" value="10:00" required="true" />
-
-      <label for="close">Close:</label>
-      <input
-        type="time"
-        name="close"
-        id="close"
-        required="true"
-      />
+       to
+      <input type="time" name="close" id="close" required="true" /><br><br>
 
       <label for="address">Address:</label>
       <input
@@ -40,8 +40,8 @@ export default () => html`
         id="address"
         placeholder="1234 Main Street"
         required="true"
-      />
-
+      /><br><br>
+      
       <label for="city">City:</label>
       <input
         type="text"
@@ -49,7 +49,7 @@ export default () => html`
         id="city"
         placeholder="Kansas City"
         required="true"
-      />
+      /><br><br>
       <label for="lat">Latitude:</label>
       <input
         type="text"
@@ -57,7 +57,7 @@ export default () => html`
         id="lat"
         placeholder="00.00000"
         required="true"
-      />
+      /><br><br>
       <label for="lon">Longitude:</label>
       <input
         type="text"
@@ -65,10 +65,10 @@ export default () => html`
         id="lon"
         placeholder="000.00000"
         required="true"
-      />
+      /><br><br>
 
       <input type="hidden" name="productsAvailable" id="productsAvailable" />
-    </fieldset>
+    </fieldset><br>
     <input type="submit" value="Submit" />
   </form>
 `;
