@@ -77,7 +77,7 @@ function addEventListeners(st) {
       document.querySelector(".fa-bars").classList.add("hidden");
     }
 
-  // Functionality for Home menu panel
+  // Functionality for home menu & background
   if (st.view === "Home") {
     // Clickable logo and text
     const eatOption = document.querySelector(".eatOption");
@@ -94,6 +94,11 @@ function addEventListeners(st) {
     const growPane = document.querySelector(".growPane");
     const learnPane = document.querySelector(".learnPane");
 
+    // Background
+    const eatBackground = document.querySelector(".eatBackground");
+    const growBackground = document.querySelector(".growBackground");
+    const learnBackground = document.querySelector(".learnBackground");
+
     eatOption.addEventListener("click", () => {
       eatSelected.classList.remove("hidden");
       growSelected.classList.add("hidden");
@@ -102,6 +107,10 @@ function addEventListeners(st) {
       eatPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       learnPane.classList.add("hidden");
+
+      eatBackground.classList.remove("hidden");
+      growBackground.classList.add("hidden");
+      learnBackground.classList.add("hidden");
     });
 
     growOption.addEventListener("click", () => {
@@ -112,6 +121,10 @@ function addEventListeners(st) {
       growPane.classList.remove("hidden");
       eatPane.classList.add("hidden");
       learnPane.classList.add("hidden");
+
+      eatBackground.classList.add("hidden");
+      growBackground.classList.remove("hidden");
+      learnBackground.classList.add("hidden");
     });
 
     learnOption.addEventListener("click", () => {
@@ -122,6 +135,10 @@ function addEventListeners(st) {
       learnPane.classList.remove("hidden");
       growPane.classList.add("hidden");
       eatPane.classList.add("hidden");
+
+      eatBackground.classList.add("hidden");
+      growBackground.classList.add("hidden");
+      learnBackground.classList.remove("hidden");
     });
   }
 
