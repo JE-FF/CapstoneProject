@@ -10,15 +10,13 @@ export default (st) => html`
     ${kelvinToFahrenheit(st.weather.feelsLike)}F.
   </h3> -->
 
-  <div id="gardenViewContainer">
-    <ul id="gardenList">
-      ${st.gardens
-        .map((garden) => {
-          return `<li><b>${garden.nameOfGarden}</b><br>${garden.location.address},<br>${garden.location.city}<br>Hours Today: ${garden.open} - ${garden.close}</li>`;
-        })
-        .join("")}
-    </ul>
+  <ul id="gardenList">
+    ${st.gardens
+      .map((garden) => {
+        return `<li><b>${garden.nameOfGarden}</b><br>${garden.location.address},<br>${garden.location.city}<br>Hours Today: ${garden.open} - ${garden.close}</li>`;
+      })
+      .join("")}
+  </ul>
 
-    <div id="map"></div>
-  </div>
+  <div id="map"></div>
 `;

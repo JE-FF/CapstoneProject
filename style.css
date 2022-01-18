@@ -46,6 +46,7 @@
     position: absolute;
     z-index: 100;
     width: 100%;
+    height: min-content%;
     background: none;
   }
 
@@ -182,7 +183,6 @@
     background: none;
   }
 
-
   footer {
     position: relative;
   }
@@ -214,6 +214,10 @@
     height: 108.5px;
   }
 
+  .fa-bars {
+    display: none !important;
+  }
+
   #fs-frm {
     background: none;
     margin-top: 5%;
@@ -226,7 +230,7 @@
   nav {
     position: fixed;
     top: 50px;
-    right: 65px;
+    right: 0px;
     background: none;
     z-index: 100;
   }
@@ -258,24 +262,18 @@
     background-color: var(--offWhite);
   }
 
-  .fa-bars {
-    top: 60px;
-    background: none;
-    font-size: 2.5em;
-    margin: 40px;
-  }
-
   main {
     display: flex;
     flex-direction: column;
     height: min-content;
     text-align: center;
-    margin-top: 150px;
-    margin-bottom: 20px;
+    margin-top: 120px;
   }
 
   #homeBackground {
-    margin-top: -150px;
+    margin-top: -120px;
+    width: 100%;
+    height: auto;
   }
 
   .homeMenuContainer {
@@ -319,49 +317,46 @@
     background-color: #000000;
   }
 
-  #gardenViewContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
   #gardenList {
-    background: rgba(255, 255, 255, 0.85);
-    width: 485px;
+    position: absolute;
+    background: var(--white);
+    width: 300px;
     min-height: 550px;
+    z-index: 10;
   }
   #gardenList > li {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
     border-bottom-color: var(--offWhite);
     border-bottom-style: solid;
     border-bottom-width: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: -40px;
     height: 150px;
     text-align: left;
     list-style-type: none;
   }
 
+  #gardenList > li:hover {
+    background: var(--offWhite);
+  }
+
   #gardenList > li > b {
-    background: rgba(255, 255, 255, 0.85);
+    background: none;
   }
 
   #map {
-    align-self: center;
-    height: 570px;
-    width: 550px;
-    z-index: 1;
+    position: absolute;
+    height: calc(100% - 120px);
+    width: 100%;
+    z-index: 0;
   }
 
   .leaflet-marker-icon {
     background: none;
   }
 
-  .leaflet-top {
-    background: none;
-  }
-
   footer {
-    position: fixed;
     bottom: 1px;
     margin-left: 0px;
   }

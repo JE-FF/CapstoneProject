@@ -29,6 +29,7 @@ function addEventListeners(st) {
     })
   );
 
+  // prevent default html form action, structure form input, POST structured input to gardens api.
   if (st.view === "Register") {
     document.querySelector("form").addEventListener("submit", (event) => {
       event.preventDefault();
@@ -70,16 +71,25 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden")
     );
 
+    // if desktop view, then do not hide nav under hamburger menu
+    if (document.querySelector(":root").clientWidth > 815) {
+      document.querySelector("nav > ul").classList.remove("hidden");
+      document.querySelector(".fa-bars").classList.add("hidden");
+    }
+
   // Functionality for Home menu panel
   if (st.view === "Home") {
+    // Clickable logo and text
     const eatOption = document.querySelector(".eatOption");
     const growOption = document.querySelector(".growOption");
     const learnOption = document.querySelector(".learnOption");
 
+    // Selection indicator bars
     const eatSelected = document.querySelector(".eatSelected");
     const growSelected = document.querySelector(".growSelected");
     const learnSelected = document.querySelector(".learnSelected");
 
+    // Menu content
     const eatPane = document.querySelector(".eatPane");
     const growPane = document.querySelector(".growPane");
     const learnPane = document.querySelector(".learnPane");
@@ -117,7 +127,7 @@ function addEventListeners(st) {
 
   // Leaflet map functionality
   if (st.view === "Gardens") {
-    const map = L.map("map").setView([39.0675, -94.35152], 13);
+    const map = L.map("map").setView([39.07193, -94.38628], 13);
     const attribution =
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
