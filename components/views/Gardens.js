@@ -13,7 +13,7 @@ export default (st) => html`
   <ul id="gardenList">
     ${st.gardens
       .map((garden) => {
-        return `<li><b>${garden.nameOfGarden}</b><br>${garden.location.address},<br>${garden.location.city}<br>Hours Today: ${garden.open} - ${garden.close}</li>`;
+        return `<li><b>${garden.nameOfGarden}</b><br>${garden.location.address}<br>${garden.location.city}<br>Hours Today: ${garden.open} - ${garden.close}</li>`;
       })
       .join("")}
   </ul>

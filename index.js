@@ -78,6 +78,7 @@ function addEventListeners(st) {
     }
 
   // Functionality for home menu & background
+  // This was one of those rewarding moments that makes all the head-scratching worth it.
   if (st.view === "Home") {
     // Clickable logo and text
     const eatOption = document.querySelector(".eatOption");

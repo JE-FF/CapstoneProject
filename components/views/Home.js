@@ -27,7 +27,7 @@ export default (st) => html`
     <br />
 
     <div class="menuPane eatPane">
-      <h1>The best meals are homemade,<br />the best food is homegrown.</h1>
+      <h1>The best meals are homemade;<br />the best food is homegrown.</h1>
       <br />
       <p>Discover what's growing in your neighborhood!</p>
       <br />
@@ -48,7 +48,7 @@ export default (st) => html`
       <h1>Find out more.</h1>
       <br />
       <p>
-        Grown@Home is a platform for gardeners to sell their home-grown produce
+        Grown @ Home is a platform for gardeners to sell their home-grown produce
         and for consumers to purchase fresh vegetables from their neighbors.
       </p>
       <br />
