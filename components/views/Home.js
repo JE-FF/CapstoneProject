@@ -27,7 +27,7 @@ export default (st) => html`
     <br />
 
     <div class="menuPane eatPane">
-      <h1>The best meals are homemade;<br />the best food is homegrown.</h1>
+      <h1>The best meals are homemade<br />the best food is homegrown.</h1>
       <br />
       <p>Discover what's growing in your neighborhood!</p>
       <br />
